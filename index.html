@@ -1,0 +1,169 @@
+﻿<!DOCTYPE html>
+<html lang="en" ng-app="App">
+<head>
+    <meta charset="utf-8" />
+    <title>AngularJS single page application</title>
+    <style>
+        body {
+            padding: 0;
+            margin: 0;
+            background-color: #F7F7F7;
+            font-family: Arial;
+
+        }
+        .wrapper {
+            max-width: 980px;
+            margin: 50px auto
+        }
+        ul {
+            padding: 0;
+            margin: 0;
+            overflow: hidden;
+            list-style: none;
+            background-color: #000;
+            border-radius: 4px;
+            
+        }
+        li {
+            float: left;
+            width: 120px;
+            height: 40px;
+            text-align: center;
+            line-height: 40px;
+            font-size: 18px
+
+
+        }
+        li.active {
+            background-color: #333;
+        }
+        li a {
+            display: block;
+            color: #FFF;
+            text-decoration: none;
+        }
+        .content {
+            margin-top: 30px;
+            font-size: 24px;
+            padding: 0 20px;
+        }
+
+    </style>
+</head>
+<body>
+<div class="wrapper">
+    <ul>
+        <li class="active">
+            <a href="#/Coffee">Coffee</a>
+        </li>
+        <li >
+            <a href="#/Cake">Cake</a>
+        </li>
+        <li>
+            <a href="#/contact">Contact Us</a>
+        </li>
+        <li>
+            <a href="#/menu">Menu</a>
+        </li>
+    </ul>
+    <div class="content">
+            <div ng-view></div>
+    </div>
+</div>
+<script src="angular.min.js"></script>
+    <script src="angular-route.js"></script>
+<script>
+    var App = angular.module('App', ['ngRoute']);
+
+    //App.config(['$routeProvider', function ($routeProvider) {
+
+    //    $routeProvider.when('#/index',
+    //        {
+    //            template: '<h1>index Pages!</h1>'
+    //        }).when('#/introduce',
+    //        {
+    //            template: '<h1>Introduce!</h1>'   
+    //        }).when('#/contact',
+    //        {
+    //            template: '<h1>Contact Us!</h1>'
+    //        }).config(['$locationProvider', function($locationProvider) {
+    //        $locationProvider.hashPrefix("");;
+    //        }]);
+            angular.module('App',['ngRoute'])
+                .config(['$routeProvider', function($routeProvider) {
+                        $routeProvider
+                            .when('/Coffee',
+                                {
+                                    template:
+                                        '            <div style="width:25%;float:left"> \r\n             ' +
+                                            '   <h3>Expresso</h3>\r\n               ' +
+                                            ' <img src="img/espresso.jpg" height="200px" width="200px" alt="Expresso" />\r\n    ' +
+                                            '            <p>Expresso is a bitter coffee</p>\r\n            </div>\r\n        ' +
+                                            '    <div style="width:25%;float:left">\r\n                    <h3>Latte</h3>\r\n             ' +
+                                            '       <img src="img/latte.jpg" height="200px" width="200px" alt="latte" />\r\n     ' +
+                                            '               <p>Expresso is a bitter coffee</p>\r\n\r\n            </div>\r\n      ' +
+                                            '      <div style="width:25% ; float:left">\r\n                  ' +
+                                            '  <h3>Cuppbchino</h3>\r\n                   ' +
+                                            ' <img src="img/cappuccino.jpg" height="200px" width="200px" alt="cappuccino" />\r\n    ' +
+                                            '                <p>Expresso is a bitter coffee</p>\r\n\r\n          ' +
+                                            '  </div>\r\n            <div style="width:25% ; float:left">\r\n                   ' +
+                                            ' <h3>Mocha</h3>\r\n                 ' +
+                                            '   <img src="img/flat_white.jpg" height="200px" width="200px" alt="flat_white" />\r\n   ' +
+                                            '    <p>Expresso is a bitter coffee</p>\r\n\r\n           ' +
+                                            ' </div>'
+
+
+                                })
+                            .when('/Cake',
+                                {
+                                    template: '    <div style="width:25%;float:left">\r\n ' +
+                                        '                   <h3>Muffin</h3>\r\n   ' +
+                                        '                 <img src="img/muffin.jpg" height="200px" width="200px" alt="Expresso" />\r\n ' +
+                                        '                   <p>Expresso is a bitter coffee</p>\r\n\r\n        ' +
+                                        '    </div>\r\n    ' +
+                                        '        <div style="width:25%;float:left">\r\n   ' +
+                                        '                 <h3>Brownie</h3>\r\n   ' +
+                                        '                 <img src="img/banana_bread.jpg" height="200px" width="200px" alt="banana_bread" />\r\n ' +
+                                        '                   <p>Expresso is a bitter coffee</p>\r\n\r\n     ' +
+                                        '       </div>\r\n          ' +
+                                        '  <div style="width:25%;float:left">\r\n       ' +
+                                        '             <h3>banana_bread</h3>\r\n  ' +
+                                        '                  <img src="img/brownie.jpg" height="200px" width="200px" alt="banana bread" />\r\n ' +
+                                        '                   <p>Expresso is a bitter coffee</p>\r\n\r\n           ' +
+                                        ' </div>\r\n           ' +
+                                        ' <div style="width:25%;float:left">\r\n                  ' +
+                                        '  <h3>Carrot cake</h3>\r\n     ' +
+                                        '               <img src="img/carrot_cake.jpg" height="200px" width="200px" alt="carrot cake" />\r\n ' +
+                                        '                   <p>Expresso is a bitter coffee</p>\r\n\r\n         ' +
+                                        '   </div>'
+
+                                })
+                            .when('/contact',
+                                {
+                                    template: '  <h1>Contact US</h1>\r\n     ' +
+                                        '   <p>Address: 11 Best Road <br/>Melbourne</p>\r\n    ' +
+                                        '    <p>Phone: 66668888</p>\r\n       ' +
+                                        ' <p>Email: <a href="mailto:info@yummycoffee.com">info@yummycoffee.com</a></p>'
+                                }).when('/menu',
+                                {
+                                    templateUrl: 'list.html',
+                                    controller: 'ListController'
+                    }
+                        )
+                        .otherwise({redirectTo:'/Coffee'});
+                }])
+                
+                .config(['$locationProvider', function($locationProvider) {
+                    $locationProvider.hashPrefix("");
+                }]);
+             App.controller('ListController',
+        [
+            '$scope', function($scope) {
+                $scope.item = 'Breakfast';
+            }
+        ]);
+
+
+</script>
+</body>
+</html>

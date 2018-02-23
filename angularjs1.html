@@ -1,0 +1,34 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+    <script src="angular.min.js"></script>
+</head>
+<body>
+<div ng-app="App">
+    <div ng-controller="demoController">
+        <input type="button" ng-disabled="false"/>
+        <h1>{{name}}is studying angularjs in {{school}}</h1>
+        <ul>
+            <li ng-repeat="(key,course) in courses">第{{key+1}}天:{{course}}</li>
+
+        </ul>
+    </div>
+
+</div>
+<script>
+var App = angular.module('App' , []); 
+App.controller('demoController' , ['$scope',function($scope){
+$scope.name = 'oliver';
+    $scope.school = 'chuanzhi';
+    $scope.courses = [
+        'MVC',
+        '模块化',
+        'directive'
+    ];
+}]);
+    </script>
+
+</body>
+</html>
