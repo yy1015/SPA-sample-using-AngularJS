@@ -78,6 +78,8 @@
     <Content Include="angular-route.js" />
     <Content Include="angular.min.js" />
     <Content Include="angularjs2.html" />
+    <Content Include="bootstrap.min-3.3.7.css" />
+    <Content Include="bootstrap.min-3.3.7.js" />
     <Content Include="css\StyleSheet1.css" />
     <Content Include="HtmlPage1.html" />
     <Content Include="angularjs1.html" />
@@ -90,6 +92,7 @@
     <Content Include="img\latte.jpg" />
     <Content Include="img\muffin.jpg" />
     <Content Include="index.html" />
+    <Content Include="jquery-3.2.1.min.js" />
     <Content Include="list.html" />
     <Content Include="Web.config" />
   </ItemGroup>
